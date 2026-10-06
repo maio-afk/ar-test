@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D AR Viewer (Android)</title>
+    <!-- GoogleのAR表示用ライブラリ -->
+    <script type="module" src="https://googleapis.com"></script>
+    
+    <style>
+        body { margin: 0; padding: 0; background-color: #f0f0f0; }
+        model-viewer { width: 100vw; height: 100vh; --poster-color: transparent; }
+        
+        #ar-button {
+            background-color: #3DDC84; /* Android風のグリーンカラー */
+            color: white;
+            border: none;
+            border-radius: 25px;
+            padding: 12px 24px;
+            font-size: 16px;
+            font-weight: bold;
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+   <model-viewer 
+        src="https://maio-afk.github.io/ar-test/model.glb" 
+        ar 
+        ar-modes="scene-viewer webxr" 
+        camera-controls 
+        touch-action="none"
+        alt="SOLIDWORKS 3Dモデル">
+        
+        <button slot="ar-button" id="ar-button">
+            🤖 ARで現実世界に配置する
+        </button>
+        
+    </model-viewer>
+
+</body>
+</html>
